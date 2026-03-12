@@ -1,0 +1,552 @@
+/* Estilos Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif; 
+    background-color: #fff; color: #333; }
+
+/* Header & Nav */
+.main-header { text-align: center; padding: 20px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+.logo-main { max-width: 150px; margin-bottom: 10px; }
+.navbar ul { display: flex; justify-content: center; gap: 20px; list-style: none; flex-wrap: wrap; }
+.navbar a { text-decoration: none; color: #444; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+.navbar a:hover { color: #D4AF37; }
+
+/* Home Hero: Una sola imagen de fondo */
+.hero-full-background {
+    height: 100vh;
+    width: 100%;
+    background-image: url('fondo-belem.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Cambiamos a columna por defecto para móviles */
+    align-items: center; 
+    justify-content: center;
+    /* AGREGAR ESTO: */
+    overflow: hidden; 
+    box-sizing: border-box;
+}
+/* Contenedor transparente para los botones */
+.buttons-overlay {
+    display: flex;
+    width: 80%; /* Ajusta esto para separar más o menos los botones */
+    justify-content: space-between; /* Empuja un botón a cada extremo */
+    position: absolute;
+    bottom: 100px; /* Ajusta la distancia desde abajo para que queden sobre los vestidos */
+    z-index: 10;
+}
+
+/* Estilo Base de tus Botones Dorados (se mantiene) */
+.btn-gold {
+    background: linear-gradient(135deg, #D4AF37, #F5E6A5);
+    padding: 15px 35px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    color: #000;
+    font-family: 'Playfair Display', serif; 
+    font-weight: bold; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* Asegura que los botones tengan un ancho mínimo similar al de tu imagen de diseño */
+    min-width: 180px; 
+    text-align: center;
+}
+
+.btn-gold:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .hero-full-background {
+        height: 80vh; /* Bajamos un poco el alto en el celu para que el usuario vea que hay contenido abajo */
+        background-attachment: scroll; /* Evita errores de renderizado en iOS */
+    }
+
+    .buttons-overlay {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column; /* Apila botones: Novias arriba, XV abajo */
+        gap: 15px;
+    }
+}
+
+
+/* Secciones */
+.section-container { padding: 80px 20px; text-align: center; }
+.bg-pink { background-color: #FFF5F7; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 40px; }
+
+/* Galería de Vestidos */
+.gallery-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.dress-card { background: #fff; padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); width: 280px; }
+.dress-card img { width: 100%; border-radius: 5px; height: 350px; object-fit: cover; }
+.dress-name { margin-top: 15px; font-weight: bold; }
+.dress-price { color: #888; font-size: 0.9rem; }
+
+/* WhatsApp Buttons */
+.whatsapp-area { margin-top: 40px; }
+.btn-whatsapp-section { 
+    display: inline-block; 
+    padding: 15px 30px; 
+    background: #ffffff; 
+    color: #000000; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold;
+    /* AGREGAR ESTO: */
+    border: 1px solid rgba(0,0,0,0.05); /* Borde casi invisible */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave hacia abajo */
+    transition: transform 0.2s ease;
+}
+
+.btn-whatsapp-section:hover {
+    transform: translateY(-2px); /* El botón sube un poquito al tocarlo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* La sombra crece */
+}
+.xv-wa { background: #f3b5f0; } /* Rosa para WhatsApp de XV */
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; }
+    .hero-box { height: 50vh; }
+}
+.faq-section {
+    padding: 80px 20px;
+    background-color: #fffafb;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.faq-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    background: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #f2e1e4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #fff5f7;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #fff;
+}
+
+.faq-answer p {
+    padding: 20px 30px; /* Agregamos más aire a los costados (30px) */
+    line-height: 1.8;   /* Esto separa un poquito más las líneas para que sea fácil de leer */
+    color: #555;
+    margin: 0;          /* Evita márgenes extraños que desajusten el contenedor */
+}
+
+/* Y si usaste una lista (ul) para los puntos con chispitas: */
+.faq-answer ul {
+    padding: 0 30px 20px 30px; /* Aire arriba, derecha, abajo e izquierda */
+    margin: 0;
+}
+
+/* Clase para abrir el acordeón mediante JS */
+.faq-item.active .faq-answer {
+    max-height: 1200px; /* Ajusta según el largo del texto */
+    padding-bottom: 25px;
+}
+.seccion-nosotras-unificada {
+    padding: 100px 20px;
+    background-color: #fffafb; /* Un rosa blush muy suave */
+    display: flex;
+    justify-content: center;
+}
+
+.nosotras-card-final {
+    max-width: 800px;
+    background: #ffffff;
+    padding: 60px 50px;
+    text-align: center;
+    border: 1px solid #f2e1e4;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.decoracion-superior {
+    color: #D4AF37;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.titulo-historia {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.intro-emotiva {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: #D4AF37;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.intro-emotiva span {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.divisor-sutil {
+    width: 40px;
+    height: 1px;
+    background-color: #D4AF37;
+    margin: 0 auto 30px;
+}
+
+.cuerpo-nosotras {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.sello-calidad {
+    margin-top: 40px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    border-top: 1px solid #f9f9f9;
+    padding-top: 25px;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .nosotras-card-final { padding: 40px 20px; }
+    .titulo-historia { font-size: 2rem; }
+    .intro-emotiva { font-size: 1.1rem; }
+}
+
+.titulo-elegante {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.resaltado-dorado {
+    color: #D4AF37;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.separador-rombo {
+    color: #D4AF37;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+}
+
+.texto-principal {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.cursiva {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.marca {
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.texto-secundario {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.subrayado {
+    border-bottom: 1px solid #D4AF37;
+    padding-bottom: 2px;
+}
+
+.firma {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-top: 40px;
+}
+.reviews-section {
+    padding: 100px 20px;
+    background-color: #ffffff; /* Fondo limpio para que resalten las estrellas */
+    text-align: center;
+}
+
+.reviews-widget-wrapper {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    min-height: 200px; /* Evita que la página "salte" mientras carga el widget */
+}
+
+/* Título de sección para que combine con el estilo girly/premium */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #888;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.footer-belem {
+    background-color: #2c2c2c; /* Gris muy oscuro casi negro */
+    color: #fff;
+    padding: 60px 20px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.footer-column p {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #D4AF37;
+}
+
+/* Estilo para el "Mapa" */
+.map-placeholder {
+    background-color: #3d3d3d;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #D4AF37;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 1px dashed #555;
+}
+
+.map-placeholder:hover {
+    background-color: #444;
+}
+
+.map-link {
+    text-decoration: none;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #777;
+}
+.whatsapp-parent {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.wa-float {
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave para que flote */
+    transition: all 0.3s ease;
+}
+
+/* Estilo para NOVIAS (Blanco) */
+.wa-novias {
+    background-color: #ffffff;
+    color: #333; /* Texto oscuro para que se lea sobre blanco */
+    border: 1px solid #e0e0e0; /* Borde fino para definir el botón */
+}
+
+/* Estilo para QUINCE (Rosa Pastel) */
+.wa-xv {
+    background-color: #f3b5f0;
+    color: #4a4a4a; /* Texto gris oscuro para un look suave */
+    border: 1px solid #e2a5df; /* Borde rosa un poquito más oscuro */
+}
+
+/* Iconos de WhatsApp - Les damos color para que resalten */
+.wa-novias i {
+    color: #25d366; /* Verde clásico de WhatsApp */
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.wa-xv i {
+    color: #ffffff; /* Blanco para que resalte sobre el rosa */
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Efecto Hover */
+.wa-float:hover {
+    transform: translateY(-3px); /* Sube un poquito */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+.lineas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.linea-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.destacada {
+    border: 1px solid #f3b5f0;
+    background-color: #fff9fe;
+}
+
+.emoji-linea {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.linea-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.linea-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.nota-encanto {
+    display: block;
+    margin-top: 10px;
+    color: #f3b5f0;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.frase-cierre {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
